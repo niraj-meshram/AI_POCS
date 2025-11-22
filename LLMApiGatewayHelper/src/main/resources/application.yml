@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: llm-api-gateway-helper
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+openai:
+  api-key: ${OPENAI_API_KEY:}
+  base-url: https://api.openai.com/v1
+  default-model: gpt-4o-mini
+  temperature: 0.2
+  max-completion-tokens: 2048
+  request-timeout-seconds: 45
+  organization-id: ${OPENAI_ORG_ID:}
